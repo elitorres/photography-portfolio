@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Landscapes | City Through My Lens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Urban Landscapes</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="hero" onclick="window.location='gallery.html'">
+      <img src="images/IMG_1584.jpg" alt="Urban street scene at dusk">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1>Urban Landscapes</h1>
+        <p class="hero-tagline">City Through My Lens &nbsp;·&nbsp; Click to explore the gallery</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+        <div class="section-line"></div>
+      </div>
+      <p style="color:var(--muted); max-width:600px; margin-bottom:48px;">
+        Capturing the essence of metropolitan beauty in every frame — from golden-hour streets to quiet urban details.
+      </p>
+
+      <!-- Thumbnail strip -->
+      <div class="home-strip" style="padding:0;">
+        <div class="thumb-grid" id="home-thumb-grid"></div>
+        <div style="margin-top:28px;">
+          <a href="gallery.html" style="
+            display:inline-block;
+            font-size:0.8rem;
+            letter-spacing:0.14em;
+            text-transform:uppercase;
+            border-bottom:1px solid var(--gold);
+            color:var(--gold);
+            padding-bottom:3px;
+            transition:opacity .2s;
+          ">View Full Gallery →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Urban Landscapes Photography</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="js/gallery.js"></script>
+</body>
+</html>

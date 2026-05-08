@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Urban Landscapes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Urban Landscapes</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <section class="section">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-photo">
+          <img src="images/IMG_1636.jpg" alt="Urban bridge">
+        </div>
+
+        <div class="contact-info">
+          <span class="gold-label">Let's work together</span>
+          <h2 style="margin-bottom:1rem;">Contact Details</h2>
+          <p>Reach out for inquiries or to discuss collaborations — available to connect and bring your vision to life.</p>
+
+          <div style="margin:2rem 0; display:flex; flex-direction:column; gap:0.8rem;">
+            <p>
+              <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Email</span><br>
+              <a href="mailto:eliezer.torres.j@gmail.com" style="color:var(--text);">eliezer.torres.j@gmail.com</a>
+            </p>
+            <p>
+              <span style="color:var(--gold); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Instagram</span><br>
+              <span style="color:var(--muted);">@yourusername</span>
+            </p>
+          </div>
+
+          <form onsubmit="handleSubmit(event)">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom photo strip -->
+      <div style="margin-top:72px;">
+        <div class="thumb-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1622.jpg" alt="Urban scene" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1627.jpg" alt="Urban scene" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1562.jpg" alt="Urban garden" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1531.jpg" alt="City bridge" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Urban Landscapes Photography</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Sent ✓';
+      btn.style.background = 'var(--gold)';
+      btn.style.color = 'var(--bg)';
+      setTimeout(() => { e.target.reset(); btn.textContent = 'Send Message'; btn.style.background = ''; btn.style.color = ''; }, 3000);
+    }
+  </script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

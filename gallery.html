@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Urban Landscapes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Urban Landscapes</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page gallery-page">
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <h2>Portfolio</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Featured viewer -->
+      <div class="featured-wrap">
+        <img id="featured-img" src="images/IMG_1584.jpg" alt="Featured photo">
+      </div>
+      <p class="featured-caption" id="featured-caption">IMG_1584 — Urban Street &nbsp;·&nbsp; Click image to enlarge</p>
+
+      <!-- Thumbnail grid (populated by JS) -->
+      <div class="thumb-grid" id="thumb-grid" style="margin-top:24px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Urban Landscapes Photography</span>
+    <span>© 2026</span>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&#x2715;</span>
+    <img id="lightbox-img" src="" alt="Full size photo">
+  </div>
+
+  <script src="js/gallery.js"></script>
+</body>
+</html>

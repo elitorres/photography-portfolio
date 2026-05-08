@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Urban Landscapes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Urban Landscapes</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <section class="section">
+      <div class="section-header">
+        <h2>About the Photographer</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="images/IMG_1566.jpg" alt="Urban photography">
+        </div>
+        <div class="about-text">
+          <span class="gold-label">Capturing urban beauty through my lens</span>
+          <h2 style="margin-bottom:1.5rem;">[Your Name]</h2>
+          <p>
+            A passionate urban photographer with an eye for the stories hidden in city streets,
+            architecture, and the interplay of light and shadow that defines metropolitan life.
+          </p>
+          <p>
+            Every frame is an opportunity to reveal the vibrant essence of cities —
+            from the golden-hour glow reflecting off glass towers to the quiet details
+            most people walk past without a second glance.
+          </p>
+          <p>
+            Based in the city, shooting everywhere.
+          </p>
+          <a href="contact.html" style="
+            display:inline-block;
+            margin-top:1.5rem;
+            font-size:0.8rem;
+            letter-spacing:0.14em;
+            text-transform:uppercase;
+            border-bottom:1px solid var(--gold);
+            color:var(--gold);
+            padding-bottom:3px;
+          ">Get in touch →</a>
+        </div>
+      </div>
+
+      <!-- Secondary photo strip -->
+      <div style="margin-top:72px;">
+        <div class="thumb-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1589.jpg" alt="Urban scene" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1612.jpg" alt="Urban floral" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1615.jpg" alt="City street" loading="lazy">
+          </div>
+          <div class="thumb" style="aspect-ratio:4/3;" onclick="window.location='gallery.html'">
+            <img src="images/IMG_1616.jpg" alt="Urban landscape" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Urban Landscapes Photography</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="js/gallery.js"></script>
+</body>
+</html>
