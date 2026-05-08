@@ -115,10 +115,20 @@ nav {
 }
 
 /* ── Gallery grid ───────────────────────────────────── */
+.gallery-page .section {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.gallery-page .section-header {
+  margin-bottom: 20px;
+}
+
 .gallery-page .featured-wrap {
-  margin-bottom: 32px;
+  margin-bottom: 10px;
   position: relative;
-  aspect-ratio: 16/9;
+  height: 42vh;
+  min-height: 220px;
   overflow: hidden;
   border-radius: var(--radius);
   background: #111;
@@ -133,8 +143,8 @@ nav {
 .featured-wrap.loading img#featured-img { opacity: 0; }
 
 .featured-caption {
-  margin-top: 10px;
-  font-size: 0.82rem;
+  margin-top: 6px;
+  font-size: 0.78rem;
   color: var(--muted);
   letter-spacing: 0.06em;
   text-align: right;
@@ -143,11 +153,11 @@ nav {
 .thumb-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .thumb {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
   overflow: hidden;
   border-radius: var(--radius);
   cursor: pointer;
