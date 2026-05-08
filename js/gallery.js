@@ -18,45 +18,23 @@ const images = [
 
 let activeIndex = 0;
 
-function setFeatured(index, thumbEls, featuredImg, captionEl) {
-  const wrap = featuredImg.closest('.featured-wrap');
-  wrap.classList.add('loading');
-
-  const newImg = new Image();
-  newImg.src = images[index].src;
-  newImg.onload = () => {
-    featuredImg.src = images[index].src;
-    if (captionEl) captionEl.textContent = images[index].caption;
-    wrap.classList.remove('loading');
-  };
-
-  thumbEls.forEach((t, i) => t.classList.toggle('active', i === index));
-  activeIndex = index;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  // ── Gallery page ──────────────────────────────────
-  const featuredImg = document.getElementById('featured-img');
-  if (featuredImg) {
-    const captionEl = document.getElementById('featured-caption');
-    const grid = document.getElementById('thumb-grid');
+  // ── Gallery collage ───────────────────────────────
+  const collage = document.getElementById('collage');
+  if (collage) {
     const lightboxEl = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    const thumbEls = images.map((img, i) => {
-      const div = document.createElement('div');
-      div.className = 'thumb' + (i === 0 ? ' active' : '');
-      div.innerHTML = `<img src="${img.src}" alt="${img.caption}" loading="lazy">`;
-      div.addEventListener('click', () => setFeatured(i, thumbEls, featuredImg, captionEl));
-      grid.appendChild(div);
-      return div;
-    });
-
-    // Open lightbox on featured image click
-    featuredImg.style.cursor = 'zoom-in';
-    featuredImg.addEventListener('click', () => {
-      lightboxImg.src = images[activeIndex].src;
-      lightboxEl.classList.add('open');
+    images.forEach((img, i) => {
+      const item = document.createElement('div');
+      item.className = 'collage-item';
+      item.innerHTML = `<img src="${img.src}" alt="${img.caption}" loading="${i < 6 ? 'eager' : 'lazy'}">`;
+      item.addEventListener('click', () => {
+        activeIndex = i;
+        lightboxImg.src = img.src;
+        lightboxEl.classList.add('open');
+      });
+      collage.appendChild(item);
     });
 
     // Close lightbox
@@ -65,17 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxEl.classList.remove('open');
       }
     });
+
     document.addEventListener('keydown', (e) => {
+      if (!lightboxEl.classList.contains('open')) return;
       if (e.key === 'Escape') lightboxEl.classList.remove('open');
-      if (e.key === 'ArrowRight' && lightboxEl.classList.contains('open')) {
-        const next = (activeIndex + 1) % images.length;
-        setFeatured(next, thumbEls, featuredImg, captionEl);
-        lightboxImg.src = images[next].src;
+      if (e.key === 'ArrowRight') {
+        activeIndex = (activeIndex + 1) % images.length;
+        lightboxImg.src = images[activeIndex].src;
       }
-      if (e.key === 'ArrowLeft' && lightboxEl.classList.contains('open')) {
-        const prev = (activeIndex - 1 + images.length) % images.length;
-        setFeatured(prev, thumbEls, featuredImg, captionEl);
-        lightboxImg.src = images[prev].src;
+      if (e.key === 'ArrowLeft') {
+        activeIndex = (activeIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[activeIndex].src;
       }
     });
   }
