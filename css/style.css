@@ -182,11 +182,10 @@ nav {
 }
 
 .about-photo {
-  aspect-ratio: 3/4;
   overflow: hidden;
   border-radius: var(--radius);
 }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo img { width: 100%; height: auto; object-fit: contain; }
 
 .about-text p {
   color: var(--muted);
